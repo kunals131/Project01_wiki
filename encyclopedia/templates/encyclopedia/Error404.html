@@ -1,0 +1,18 @@
+{%extends "encyclopedia/layout.html" %}
+
+{%block title %} 
+    {{entryTitle}}
+{%endblock%}
+
+{% block body %}     
+
+<h1 id="er">ERROR 404!</h1>
+<main class="ercontent">{{entryTitle}} ?</main>
+<main class="ercontent2">
+    No such entry exist<br>
+    <br>
+    Add this entry : <a href="#">addentry</a> 
+</main>
+
+
+{%endblock%}
