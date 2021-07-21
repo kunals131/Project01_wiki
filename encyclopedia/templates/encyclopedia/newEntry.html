@@ -1,0 +1,27 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Adding New Page
+{% endblock %}}
+
+{%block body%}
+<h1>NEW ENTRY : </h1>
+<br><br>
+{%if existing %}
+<div class="alert alert-danger" role="alert">
+    Entry with title  {{title}} already exists.
+  </div>
+  <div class="alert alert-info" role="alert">
+      You can change the title and try again!
+  </div>
+{%endif%}
+<br>
+
+<div class="form-group">
+    <form action="{% url 'newEntry' %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+</div>
+{% endblock %}
